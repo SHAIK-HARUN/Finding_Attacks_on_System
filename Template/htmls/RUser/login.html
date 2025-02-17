@@ -1,0 +1,494 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Login</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <link rel="stylesheet"  type="text/css" href="{% static 'style.css'%} "  />
+<link rel="stylesheet"   type="text/css" href="{% static 'coin-slider.css'%}" />
+<link href="{% static 'favicon.png' %}" rel="icon" type="image/x-icon">
+
+<script type="text/javascript" src="{% static 'cufon-yui.js'%} "></script>
+<script type="text/javascript" src="{% static 'cufon-aller.js'%}"></script>
+<script type="text/javascript" src="{% static 'jquery-1.4.2.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'script.js'%}"></script>
+<script type="text/javascript" src="{% static 'coin-slider.min.js'%}"></script>
+<style type="text/css">
+<!--
+.style5 {
+	font-size: 24px;
+	color: #FF0000;
+}
+
+html, body {
+  overflow: auto;
+  height: 100%;
+}
+.style12 {font-weight: bold; font-size: 37px;}
+.style13 {font-size: 24px; color: #FF0000; font-weight: bold; padding-left: 10%; }
+.style16 {color: #FF0000}
+.style20 {color: #FF0000; font-weight: bold; }
+-->
+</style>
+</head>
+<body>
+
+
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="menu_nav">
+        <p>&nbsp;</p>
+      </div>
+
+      <style>
+        .style5 {
+          display: inline-block;
+          overflow: hidden;
+          white-space: nowrap;
+          border-right: 3px solid #FF0000; /* Adjust color to match your style */
+          font-family: "Courier New", Courier, monospace;
+          font-size: 50px; /* Adjust size to match the design */
+          animation: typing 3s steps(50), blink-caret 0.5s step-end infinite;
+          color: #000000;
+        }
+        
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+          to {
+            width: 100%;
+          }
+        }
+
+        
+        
+        @keyframes blink-caret {
+          from, to {
+            border-color: transparent;
+          }
+          50% {
+            border-color: #000000;
+          }
+        }
+      </style>
+      <div class="mainbar">
+        <h1 align="center"><a href="index.html"><span class="style5">Harnessing Artificial Intelligence for E-Governance and Cybersecurity in Smart Cities: A Stakeholder's Viewpoint</span></a></h1>
+
+        <div class="tab-content tab-space">
+            <div class="tab-pane active" id="preview-alerts">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script><link href="https://unpkg.com/soft-ui-design-system@1.0.1/assets/css/soft-design-system.min.css" rel="stylesheet" /><div class="container py-5">
+
+          <style>
+
+            /* Base styling for the alert box */
+.alert-custom {
+  background: linear-gradient(135deg, #0062E6, #33AEFF); /* Blue gradient for a professional, fresh look */
+  color: white;
+  padding: 20px 40px;
+  border-radius: 12px;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deep shadow for a lifted effect */
+  transition: all 0.4s ease; /* Smooth transition for hover effect */
+  font-family: 'Roboto', sans-serif; /* Clean modern font */
+}
+
+/* Styling for the links inside the alert box */
+.alert-custom .nav-link {
+  color: white; /* White text for links */
+  text-decoration: none;
+  font-weight: 600; /* Slightly bolder text */
+  margin: 0 12px; /* Adequate space between links */
+  padding: 10px 20px;
+  border-radius: 8px; /* Rounded corners for the links */
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Hover effect for links */
+.alert-custom .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Light transparent background */
+  color: #FFEB3B; /* Golden color for text on hover */
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow on hover for a glowing effect */
+}
+
+/* Active effect for links */
+.alert-custom .nav-link:active {
+  transform: translateY(1px); /* Slight press effect */
+  box-shadow: none; /* Remove shadow on active click */
+}
+
+/* Focus effect for accessibility */
+.alert-custom .nav-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 233, 61, 0.5); /* Gold glow effect on focus */
+}
+
+/* Subtle animation for the alert box when loading */
+.alert-custom {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+          </style>
+          
+          <div class="row">
+            <div class="alert alert-custom text-white font-weight-bold" role="alert">
+                <p align="center">
+                    <span class="active">
+                        <span class="style12">
+                            <a href="{% url 'index' %}" class="nav-link">Home</a> | 
+                            <a href="{% url 'login' %}" class="nav-link">Remote User</a> | 
+                            <a href="{% url 'serviceproviderlogin' %}" class="nav-link">Service Provider</a>
+                        </span>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+
+      <div class="clr"></div>
+      <div class="slider">
+        
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content_resize">
+
+
+      <div class="mainbar">
+        <div class="article">
+          
+          <div class="img">
+            <div align="center"><form method="POST" role="form">
+							{% csrf_token %}
+
+						<fieldset>
+                             {% load static %}
+						<img src="{% static '/pass.png' %}" width="1000" height="500" alt="My image">
+<br>
+<br>
+            <style>
+             /* Basic reset for margin, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Prevents scrollbars during animation */
+  animation: rotateBg 10s linear infinite; /* Rotating background animation */
+}
+
+/* Animation for rotating background */
+@keyframes rotateBg {
+  0% {
+      background: linear-gradient(135deg,#06b10f, #ff7e5f, #1d49d8);
+  }
+  50% {
+      background: linear-gradient(135deg,#dfdb0a, #00b4d8, #990474);
+  }
+  100% {
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  }
+}
+
+/* Container for login form */
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transform: rotate(5deg); /* Slight rotation for effect */
+  animation: slideIn 1s ease-out forwards; /* Sliding in from the right */
+}
+
+/* Styling the login text */
+.style20 {
+  font-size: 27px;
+  color: #333;
+  
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInText 1s ease-out; /* Fade-in text animation */
+}
+
+/* Form styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Styling individual input fields */
+.form-group input {
+  padding: 15px;
+  border: 2px solid #ff7e5f; /* Border color matching the background */
+  border-radius: 8px;
+  font-size: 25px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #feb47b; /* Focused state with a gold color */
+  transform: scale(1.05); /* Slight zoom effect when focused */
+}
+
+/* Button styling */
+.btn {
+  padding: 15px;
+  background-color: #ff7e5f;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #feb47b;
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Optional: Add a small shadow for input fields and button */
+.form-group input, .btn {
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus, .btn:hover {
+  box-shadow: 0 4px 10px rgba(255, 126, 95, 0.5); /* Glow effect on focus or hover */
+}
+
+/* Keyframes for sliding animation */
+@keyframes slideIn {
+  0% {
+      transform: translateX(100%); /* Start off-screen from the right */
+  }
+  100% {
+      transform: translateX(0); /* End at its normal position */
+  }
+}
+
+/* Keyframes for fade-in text */
+@keyframes fadeInText {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+            </style>
+							
+            <div class="login-container">
+              <p class="style20">Login Using Your Account:</p>
+              
+              <form action="#" method="post" class="login-form">
+                  <div class="form-group">
+                      <input type="text" name="username" placeholder="User Name" required>
+                  </div>
+                  
+                  <div class="form-group">
+                      <input type="password" name="password" placeholder="Password" required>
+                  </div>
+                  
+                  <div class="form-group">
+                      <input type="submit" name="submit1" class="btn" value="Login">
+                  </div>
+              </form>
+          </div>
+<br>
+
+          <style>
+
+            /* General styles for the button */
+.register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px; /* Rounded corners for a smooth, modern look */
+  border: none;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Smooth transitions */
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Styles for the anchor tag inside the button */
+.register-btn .register-link {
+  text-decoration: none;
+  color: white; /* Ensuring the link inside the button stays white */
+  padding: 5px;
+  display: inline-block;
+}
+
+/* Hover effect for the button */
+.register-btn:hover {
+  background: linear-gradient(135deg, #feb47b, #ff7e5f); /* Reversed gradient on hover */
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow when hovered */
+}
+
+/* Active state for the button when clicked */
+.register-btn:active {
+  transform: translateY(2px); /* Button slightly pressed when clicked */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional styling for the text inside the button */
+.register-btn .style16 {
+  margin-right: 5px;
+}
+
+.register-btn .style20 {
+  color: #ffec3d; /* Bright yellow for emphasis */
+}
+
+/* Optional: Add focus styles for accessibility */
+.register-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 233, 61, 0.5); /* Glow effect on focus */
+}
+
+
+          </style>
+
+          <style>
+            .audio-top-right {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(135deg, #0062E6, #33AEFF);
+                padding: 10px;
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            }
+        
+            #custom-audio {
+                width: 300px;
+                outline: none;
+                border: none;
+            }
+        
+            #custom-audio::-webkit-media-controls {
+                background: linear-gradient(135deg, #ffffff, #e0e0e0);
+                border-radius: 8px;
+                color: #0062E6;
+            }
+        
+            #custom-audio::-webkit-media-controls-play-button,
+            #custom-audio::-webkit-media-controls-volume-slider {
+                border-radius: 50%;
+                background: #0062E6;
+                color: #fff;
+            }
+        
+            #custom-audio::-webkit-media-controls-play-button:hover,
+            #custom-audio::-webkit-media-controls-volume-slider:hover {
+                background: #33AEFF;
+                transform: scale(1.1);
+                transition: all 0.3s ease-in-out;
+            }
+        </style>
+
+
+
+
+
+          <div class="main">
+
+            <div class="audio-top-right">
+                <audio id="custom-audio" controls >
+                    <source src="{% static 'loginau.mp3' %}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+          <div>
+            <button class="register-btn">
+                <span class="style16"><strong>Are You a New User?</strong></span>
+                <span class="style20">!</span>
+                <a href="{% url 'Register1' %}" class="register-link">REGISTER</a>
+            </button>
+        </div>
+ 						</fieldset>
+				</form></div>
+          </div>
+
+            <div class="mainbar">
+
+
+        <div class="tab-content tab-space">
+            <div class="tab-pane active" id="preview-alerts">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script><link href="https://unpkg.com/soft-ui-design-system@1.0.1/assets/css/soft-design-system.min.css" rel="stylesheet" /><div class="container py-5">
+  
+    <div>
+</div>
+          <div class="post_content"></div>
+          <div class="clr"></div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="searchform"></div>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="fbg"></div>
+  <div class="footer"></div>
+</div>
+<div align=center></div>
+</body>
+</html>

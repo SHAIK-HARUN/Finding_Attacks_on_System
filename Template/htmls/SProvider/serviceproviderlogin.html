@@ -1,0 +1,256 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/icon.png" type="image/x-icon" />
+    <link href="{% static 'favicon.png' %}" rel="icon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Righteous|Fredoka+One|Poppins" rel="stylesheet">
+
+    <!-- Internal Styles -->
+    <style>
+      /* General body settings */
+      body {
+        background: url("{% static 'adminimg.jpg' %}") ;
+        background-size: cover;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Container Style */
+      .container-fluid {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+      }
+
+      .container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        color: #000000;
+        font-size: 25px;
+        max-width: 900px;
+        font-weight: bold;
+        animation: fadeInUp 1s ease-out;
+        text-align: center;
+      }
+
+      /* Title Styling */
+      #title {
+        font-family: 'Fredoka One', cursive;
+        color: #FF0000;
+        font-size: 36px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        animation: slideInFromTop 1s ease-out;
+      }
+
+      /* Subtext Styling */
+      .style5 {
+        color: #000000;
+        font-weight: bold;
+        font-size: 25px;
+        margin-bottom: 30px;
+        animation: fadeIn 2s ease-out;
+      }
+
+      /* Input Fields */
+      .form-group input {
+        border-radius: 25px;
+        padding: 15px;
+        border: 1px solid #2C3E50;
+        margin-bottom: 20px;
+        width: 100%;
+        font-size: 30px;
+        color: #ECF0F1;
+        background-color: transparent;
+        transition: border-color 0.3s, box-shadow 0.3s ease;
+      }
+
+      .form-group input:focus {
+        border-color: #00FF99;
+        box-shadow: 0 0 10px rgba(0, 255, 153, 0.8);
+      }
+
+      /* Button Styling */
+      .btn {
+        background-color: #FF0000;
+        color: white;
+        font-weight: bold;
+        border-radius: 25px;
+        font-size: 20px;
+        padding: 15px 25px;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #FF9900;
+        box-shadow: 0 4px 15px rgba(255, 153, 0, 0.6);
+      }
+
+      .btn a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 25px;
+      }
+
+      /* Hover effect for links */
+      .btn a:hover {
+        color: #FF9900;
+      }
+
+      /* Login Image */
+      .form-container img {
+        max-width: 100%;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        animation: fadeInImage 1.5s ease-out forwards;
+      }
+
+      /* Footer styling */
+      .footer {
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      @keyframes fadeInImage {
+        0% { opacity: 0; transform: translateY(-30px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes slideInFromTop {
+        0% { opacity: 0; transform: translateY(-50px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+        }
+
+        #title {
+          font-size: 28px;
+        }
+
+        .style5 {
+          font-size: 25px;
+        }
+
+
+        .style2 {
+          font-size: 37px;
+          font-weight: bold;
+          color: black;
+        }
+
+        .form-group input {
+          font-size: 16px;
+        }
+
+        .btn {
+          font-size: 25px;
+          padding: 12px 20px;
+        }
+      }
+
+      /* Small screen and tablet adjustments */
+      @media (max-width: 576px) {
+        #title {
+          font-size: 24px;
+        }
+
+        .container {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+        <!-- Header Section -->
+        <h2 id="title">Harnessing Artificial Intelligence for E-Governance and Cybersecurity in Smart Cities: A Stakeholder's Viewpoint</h2>
+        <p class="style5">
+          <small id="passwordHelpInline" class="text-muted">
+            Machine learning, data encryption, security protocols, AI in cybersecurity, smart cities, and more...
+          </small>
+        </p>
+        <hr>
+
+        <!-- Login Form Section -->
+        <div class="row justify-content-center">
+          <div class="col-md-12">
+            <form method="POST" role="form">
+              {% csrf_token %}
+              <fieldset>
+                <div class="form-container">
+                  <img src="{% static '/loginad.gif' %}" alt="Login Image">
+                  <p class="style2">Login to the Cyber System</p>
+
+                  <!-- Username Field -->
+                  <div class="form-group">
+                    <input type="text" name="username" placeholder="User Name" required>
+                  </div>
+
+                  <!-- Password Field -->
+                  <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div>
+                    <input type="submit" name="submit1" class="btn btn-md" value="Login">
+                  </div>
+                </div>
+              </fieldset>
+              <br><br>
+              <button class="btn btn-lg"><a href="{% url 'login' %}">User Login</a></button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+          <p>&copy; 2024 CyberSecure | All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

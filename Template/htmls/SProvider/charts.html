@@ -1,0 +1,134 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+<style>
+    /* General Body Styles */
+    body {
+        background-color: #F4F6F9; /* Light background color */
+        font-family: 'Arial', sans-serif; /* Clean, modern font */
+        margin: 0;
+        padding: 0;
+        color: #2C3E50; /* Dark text color for good contrast */
+    }
+
+    /* Topic/Heading Styling */
+    .topic h1 {
+        color: #333; /* Dark text color for the header */
+        padding: 10px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #FF5733, #FF8C00); /* Gradient background for the title */
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        font-size: 36px;
+        margin: 20px 0;
+    }
+
+    /* Horizontal Navigation Bar (Sidemenu) */
+    .sidemenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #34495E; /* Dark background for the sidemenu */
+        display: flex;
+        justify-content: center; /* Center the links horizontally */
+        padding: 10px 0; /* Space out the items vertically */
+        z-index: 1000; /* Ensure it stays above other content */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Small shadow for depth */
+    }
+
+    .sidemenu a {
+        color: #ecf0f1; /* Light text color */
+        text-decoration: none;
+        font-size: 18px;
+        padding: 12px 20px; /* Add some padding around the links */
+        margin: 0 15px; /* Space out the items horizontally */
+        border-radius: 6px;
+        background: #2C3E50; /* Dark background for links */
+        transition: background-color 0.3s, transform 0.3s; /* Smooth transition on hover */
+    }
+
+    .sidemenu a:hover {
+        background: #FF5733; /* Bright color on hover */
+        color: #34495E; /* Change text color on hover */
+        transform: translateY(-2px); /* Slight upward movement on hover */
+    }
+
+    /* Chart Container Styling */
+    #chartContainer {
+        margin-top: 80px; /* Push down content to make space for the top menu */
+        padding: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .sidemenu {
+            flex-direction: column; /* Make it vertical on small screens */
+            align-items: center;
+        }
+
+        .sidemenu a {
+            font-size: 16px; /* Reduce font size for smaller screens */
+            padding: 10px 15px;
+        }
+
+        #chartContainer {
+            margin-top: 140px; /* Adjust content margin for small screens */
+        }
+
+        .topic h1 {
+            font-size: 28px;
+        }
+    }
+</style>
+
+<script>
+    window.onload = function() {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            title: {
+                text: ""
+            },
+            data: [{
+                {% if chart_type == "line" %}
+                type: "line",
+                {% elif chart_type == "pie" %}
+                type: "pie",
+                {% elif chart_type == "spline" %}
+                type: "spline",
+                {% endif %}
+                startAngle: 240,
+                yValueFormatString: "##0.00\"%\"",
+                indexLabel: "{label} {y}",
+                dataPoints: [
+                    {% for o in form %}
+                    {y: {{o.dcount}}, label: "{{o.names}}"},
+                    {% endfor %}
+                ]
+            }]
+        });
+        chart.render();
+    }
+</script>
+
+<body>
+    <br>
+    <div class="topic">
+        <h1>Charts for Cyber Attack Predictions</h1>
+
+        <!-- Horizontal Navigation Bar (Sidemenu) -->
+        <div class="sidemenu">
+            <a href="{% url 'charts' 'pie' %}">PIE CHART</a>
+            <a href="{% url 'charts' 'line' %}">LINE CHART</a>
+            <a href="{% url 'charts' 'spline' %}">SPLINE CHART</a>
+        </div>
+
+        <!-- Chart Container -->
+        <div id="chartContainer" class="graph"></div>
+
+        <!-- Include CanvasJS library -->
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </div>
+</body>
+
+{% endblock %}

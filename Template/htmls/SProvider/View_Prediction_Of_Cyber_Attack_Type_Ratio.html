@@ -1,0 +1,164 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+<link href="{% static 'favicon.png' %}" rel="icon" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css?family=Lobster|Righteous|Fredoka+One" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #121212;
+        color: #f1f1f1;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container-fluid {
+        padding: 50px 15px;
+    }
+
+    .container {
+        background-color: #2c3e50;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        margin-bottom: 50px;
+    }
+
+    #title {
+        font-family: 'Fredoka One', cursive;
+        color: #FF5733;
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .text-uppercase {
+        font-family: 'Righteous', cursive;
+        font-size: 22px;
+        color: #FF5733;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .style1 {
+        font-weight: bold;
+        color: #FF5733;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+        font-family: 'Arial', sans-serif;
+        color: #f1f1f1;
+        border-radius: 8px;
+    }
+
+    th {
+        background-color: #1abc9c;
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    td {
+        background-color: #34495e;
+    }
+
+    tr:nth-child(even) td {
+        background-color: #2c3e50;
+    }
+
+    tr:hover td {
+        background-color: #FF5733;
+        color: #2c3e50;
+    }
+
+    .style7 {
+        color: #FFFF00;
+    }
+
+    .style9 {
+        font-size: 20px;
+    }
+
+    .center-table {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+
+    .col-md-5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col-md-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 20px;
+        }
+
+        #title {
+            font-size: 28px;
+        }
+
+        th, td {
+            font-size: 16px;
+        }
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <form role="form" method="POST">
+                        {% csrf_token %}
+                        <fieldset>
+                            <p class="text-uppercase style1">View Prediction Of Cyber Attack Type Ratio Details</p>
+                            <hr>
+                            <div>
+                                <table class="center-table" border="1" cellspacing="0" cellpadding="5">
+                                    <thead>
+                                        <tr>
+                                            <th>View Cyber Attack Type</th>
+                                            <th>Ratio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for object in objs %}
+                                        <tr>
+                                            <td>{{ object.names }}</td>
+                                            <td class="style9">{{ object.ratio }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                    <!-- Empty Column (Optional) -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="{% static 'favicon.png' %}" rel="icon" type="image/x-icon">
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'coin-slider.css' %}" />
+    <script type="text/javascript" src="{% static 'cufon-yui.js' %}"></script>
+    <script type="text/javascript" src="{% static 'cufon-aller.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery-1.4.2.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'coin-slider.min.js' %}"></script>
+
+    <style type="text/css">
+        /* General Reset */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Layout */
+        .main {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        .header {
+            position: relative;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+            box-sizing: border-box;
+        }
+
+        /* Typewriter Animation */
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #000000;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 40px;
+            animation: typing 4s steps(50), blink-caret 0.75s step-end infinite;
+            color: #f0f2f5;
+        }
+
+        @keyframes typing {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            50% { border-color: transparent; }
+            100% { border-color: #FF5733; }
+        }
+
+        .header h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        /* Alert Box */
+        .alert-custom {
+            background: linear-gradient(135deg, #0062E6, #33AEFF);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 12px;
+            font-size: 32px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .alert-custom .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .alert-custom .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #FFEB3B;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Background Video */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-sizing: border-box;
+        }
+
+        .content h2 {
+            font-size: 34px;
+            color: #FF5733;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* Image */
+        .content img {
+            width: 100%;
+            height: auto;
+            max-width: 1270px;
+            margin: 20px 0;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 70px;
+            font-size: 25px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .header h1 {
+                font-size: 30px;
+            }
+
+            .typewriter {
+                font-size: 28px;
+            }
+
+            .content h2 {
+                font-size: 28px;
+            }
+
+            .content p {
+                font-size: 16px;
+            }
+
+            .content img {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <style>
+        .audio-top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0062E6, #33AEFF);
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+    
+        #custom-audio {
+            width: 300px;
+            outline: none;
+            border: none;
+        }
+    
+        #custom-audio::-webkit-media-controls {
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            border-radius: 8px;
+            color: #0062E6;
+        }
+    
+        #custom-audio::-webkit-media-controls-play-button,
+        #custom-audio::-webkit-media-controls-volume-slider {
+            border-radius: 50%;
+            background: #0062E6;
+            color: #fff;
+        }
+    
+        #custom-audio::-webkit-media-controls-play-button:hover,
+        #custom-audio::-webkit-media-controls-volume-slider:hover {
+            background: #33AEFF;
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="main">
+
+        <div class="audio-top-right">
+            <audio controls >
+                <source src="{% static 'homeau.mp3' %}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+
+
+        <!-- Header Section -->
+        <div class="header">
+            <div class="typewriter">
+                This project by <br><span style="color: #FF5733;">P. Bhavana</span>
+            </div>
+            <h1>Harnessing Artificial Intelligence for E-Governance and Cybersecurity in Smart Cities: A Stakeholder's Viewpoint</h1>
+        </div>
+
+        
+
+        <!-- Alert Section -->
+        <div class="alert-custom">
+            <p>
+                <a href="{% url 'index' %}" class="nav-link">Home</a> | 
+                <a href="{% url 'login' %}" class="nav-link">Remote User</a> | 
+                <a href="{% url 'serviceproviderlogin' %}" class="nav-link">Service Provider</a>
+            </p>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="content">
+            <h2>Artificial Intelligence, Cybersecurity, E-Governance, and Smart Cities</h2>
+            <p>
+                Artificial intelligence (AI) has been identified as a critical technology of the Fourth Industrial Revolution (Industry 4.0) for protecting computer network systems against cyber-attacks, malware, phishing, damage, or illicit access. AI has the potential to strengthen the cyber capabilities and safety of nation-states, local governments, and non-state entities through e-Governance. Existing research provides a mixed association between AI, e-Governance, and cybersecurity; however, this relationship is believed to be context-specific. AI, e-Governance, and cybersecurity influence and are affected by various stakeholders possessing a variety of knowledge and expertise in respective areas...
+            </p>
+
+            <img src="{% static 'cyberhome1.webp' %}" alt="Cybersecurity Image" />
+
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <p>&copy; 2024 P. Bhavana | All rights reserved.</p>
+        </div>
+
+    </div>
+</body>
+</html>

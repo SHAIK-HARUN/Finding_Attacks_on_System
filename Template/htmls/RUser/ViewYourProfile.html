@@ -1,0 +1,128 @@
+{% extends 'RUser/Header.html' %}
+{% block userblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+<link href="{% static 'favicon.png' %}" rel="icon" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css?family=Lobster|Righteous|Fredoka+One" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: 'Arial', sans-serif;
+    }
+    .container-fluid {
+        padding: 50px 0;
+    }
+    .container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    #title {
+        font-family: 'Fredoka One', cursive;
+        color: #333;
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    .text-uppercase {
+        font-family: 'Righteous', cursive;
+        font-size: 30px;
+        color: #FF5733;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .style1 {
+        color: #FF5733;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .style4 {
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .style6 {
+        color: #333;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .form-group {
+        margin-bottom: 30px;
+    }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    .table td {
+        padding: 12px;
+        text-align: center;
+    }
+    .table td:first-child {
+        background-color: #FF5733;
+    }
+    .table td:nth-child(2), .table td:nth-child(4) {
+        background-color: #f1f1f1;
+    }
+    .table td span {
+        font-weight: bold;
+        color: #333;
+    }
+    .table tr:nth-child(odd) td {
+        background-color: #f9f9f9;
+    }
+    .table tr:nth-child(even) td {
+        background-color: #fff;
+    }
+    .table td span {
+        color: #FF5733;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form role="form" method="POST">
+                        {% csrf_token %}
+                        <fieldset>
+                            <p class="text-uppercase style1">YOUR PROFILE DETAILS !!!</p>
+                            <hr>
+                            <div class="form-group">
+                                <table class="table">
+                                    <tr>
+                                        <td><span class="style4">Username</span></td>
+                                        <td><span class="style6">{{ object.username }}</span></td>
+                                        <td><span class="style4">Email Id</span></td>
+                                        <td><span class="style6">{{ object.email }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="style4">Mobile Number</span></td>
+                                        <td><span class="style6">{{ object.phoneno }}</span></td>
+                                        <td><span class="style4">Gender</span></td>
+                                        <td><span class="style6">{{ object.gender }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="style4">Address</span></td>
+                                        <td><span class="style6">{{ object.address }}</span></td>
+                                        <td><span class="style4">Country</span></td>
+                                        <td><span class="style6">{{ object.country }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="style4">State</span></td>
+                                        <td><span class="style6">{{ object.state }}</span></td>
+                                        <td><span class="style4">City</span></td>
+                                        <td><span class="style6">{{ object.city }}</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,189 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+<link href="{% static 'favicon.png' %}" rel="icon" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css?family=Lobster|Righteous|Fredoka+One|Russo+One" rel="stylesheet" />
+
+<style>
+    body {
+        background: linear-gradient(135deg, #2980b9, #8e44ad); /* Gradient background */
+        color: #fff;
+        font-family: 'Russo One', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container-fluid {
+        padding: 50px;
+    }
+
+    .container {
+        background-color: #fff;
+        color: #333;
+        padding: 50px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #title {
+        font-family: 'Fredoka One', cursive;
+        font-size: 48px; /* Increased font size */
+        text-align: center;
+        color: #e74c3c;
+    }
+
+    .text-uppercase {
+        font-family: 'Righteous', cursive;
+        text-align: center;
+        font-size: 36px; /* Increased font size */
+        color: #e74c3c;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        letter-spacing: 3px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th {
+        background-color: #e74c3c; /* Bold red background for header */
+        color: yellow;
+        padding: 16px;
+        text-align: center;
+        font-size: 18px; /* Increased font size */
+        font-weight: bold;
+    }
+
+    td {
+        background-color: #34495e;
+        color: white;
+        padding: 16px; /* Increased padding */
+        text-align: center;
+        font-size: 16px; /* Increased font size */
+        border-radius: 5px; /* Rounded corners for table cells */
+    }
+
+    tr:nth-child(even) {
+        background-color: #2c3e50;
+    }
+
+    tr:hover {
+        background-color: #2980b9;
+        cursor: pointer;
+    }
+
+    .viewclients {
+        overflow-x: auto;
+    }
+
+    .viewclients table {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+    .style1 {
+        color: #FF5733;
+        font-weight: bold;
+    }
+
+    input {
+        font-family: 'Russo One', sans-serif;
+        font-size: 18px; /* Increased font size */
+        padding: 12px;
+        margin: 12px 0;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    input:focus {
+        border-color: #2980b9;
+        box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+    }
+
+    .col-md-5 {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .col-md-2 {
+        display: none; /* Placeholder for responsive design */
+    }
+
+    /* Mobile and tablet responsiveness */
+    @media (max-width: 768px) {
+        .container {
+            padding: 20px;
+        }
+
+        .text-uppercase {
+            font-size: 28px; /* Reduced font size for mobile */
+        }
+
+        th, td {
+            font-size: 14px; /* Reduced font size for mobile */
+        }
+
+        .viewclients {
+            overflow-x: auto;
+        }
+
+        .col-md-5 {
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <form role="form" method="POST">
+                        {% csrf_token %}
+                        <fieldset>
+                            <p class="text-uppercase style1">VIEW ALL REMOTE USERS!!!</p>
+                            <div class="viewclients">
+                                <table>
+                                    <tr>
+                                        <th>User Name</th>
+                                        <th>Email</th>
+                                        <th>Gender</th>
+                                        <th>Address</th>
+                                        <th>Mob No</th>
+                                        <th>Country</th>
+                                        <th>State</th>
+                                        <th>City</th>
+                                    </tr>
+                                    {% for o in objects %}
+                                    <tr>
+                                        <td><span class="style1">{{o.username}}</span></td>
+                                        <td><span class="style1">{{o.email}}</span></td>
+                                        <td><span class="style1">{{o.gender}}</span></td>
+                                        <td><span class="style1">{{o.address}}</span></td>
+                                        <td><span class="style1">{{o.phoneno}}</span></td>
+                                        <td><span class="style1">{{o.country}}</span></td>
+                                        <td><span class="style1">{{o.state}}</span></td>
+                                        <td><span class="style1">{{o.city}}</span></td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                    <!-- Placeholder for extra content -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

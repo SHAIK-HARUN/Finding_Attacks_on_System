@@ -1,0 +1,251 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+<link href="{% static 'favicon.png' %}" rel="icon" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css?family=Lobster|Righteous|Fredoka+One|Poppins" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #212121;  /* Dark background for a modern look */
+        font-family: 'Poppins', sans-serif; /* Clean font for better readability */
+        margin: 0;
+        padding: 0;
+        color: #ECF0F1;  /* Light text for contrast */
+    }
+
+    .container-fluid {
+        padding: 60px 30px;  /* Added more padding for spacing */
+    }
+
+    .container {
+        background-color: #2C3E50;  /* Dark blue-gray container */
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);  /* Soft shadow for better depth */
+        margin: 0 auto;
+    }
+
+    #title {
+        font-family: 'Fredoka One', cursive;
+        color: #FF5733;  /* Warm orange color for the title */
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .text-uppercase {
+        font-family: 'Righteous', cursive;
+        font-size: 26px;
+        color: #FF5733;
+        text-align: center;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .tweettext {
+        border: 2px solid #FF5733;  /* Highlight borders */
+        background-color: #34495E;
+        padding: 30px;
+        border-radius: 10px;
+        overflow-x: auto;
+        color: #ECF0F1;
+        font-size: 16px;  /* Increased font size for readability */
+        line-height: 1.6;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;  /* Increased font size for better readability */
+        color: #FF5733;
+    }
+
+    th {
+        background-color: #2C3E50;
+        color: #ECF0F1;
+        font-weight: bold;
+    }
+
+    td {
+        background-color: #34495E;
+        color: #ECF0F1;
+        font-family: 'Arial', sans-serif;
+    }
+
+    tr:nth-child(even) td {
+        background-color: #3C4A59;  /* Slightly lighter rows for contrast */
+    }
+
+    tr:hover td {
+        background-color: #FF5733;
+        color: #34495E;  /* Hover effect with inverse text color */
+        cursor: pointer;
+    }
+
+    .style1 {
+        color: #FF5733;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .style12 {
+        color: #FFFF00;  /* Bright yellow for special highlights */
+        font-weight: bold;
+    }
+
+    .col-md-5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col-md-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Media Queries for Better Responsiveness */
+    @media (max-width: 768px) {
+        .container {
+            padding: 30px;
+        }
+
+        #title {
+            font-size: 36px;
+        }
+
+        .text-uppercase {
+            font-size: 22px;
+        }
+
+        th, td {
+            font-size: 16px;
+        }
+
+        .tweettext {
+            font-size: 14px;
+        }
+
+        .col-md-5 {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    /* Adding some custom button styles */
+    .btn-primary {
+        background-color: #FF5733;
+        color: white;
+        padding: 12px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #FF6F61;
+        transform: scale(1.05);
+    }
+
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <form role="form" method="POST">
+                        {% csrf_token %}
+                        <fieldset>
+                            <p class="text-uppercase style1">View Prediction Of Cyber Attack Type Details !!!</p>
+                            <hr>
+                            <div class="tweettext">
+                                <table border="1" bordercolor="#FF5733">
+                                    <thead>
+                                        <tr>
+                                            <th>Fid</th>
+                                            <th>Timestamp</th>
+                                            <th>Source IP Address</th>
+                                            <th>Destination IP Address</th>
+                                            <th>Source Port</th>
+                                            <th>Destination Port</th>
+                                            <th>Protocol</th>
+                                            <th>Packet Length</th>
+                                            <th>Packet Type</th>
+                                            <th>Traffic Type</th>
+                                            <th>Payload Data</th>
+                                            <th>Malware Indicators</th>
+                                            <th>Anomaly Scores</th>
+                                            <th>Alerts/Warnings</th>
+                                            <th>Attack Signature</th>
+                                            <th>Action Taken</th>
+                                            <th>Severity Level</th>
+                                            <th>Device Information</th>
+                                            <th>Network Segment</th>
+                                            <th>Geo-City Location Data</th>
+                                            <th>Proxy Information</th>
+                                            <th>Firewall Logs</th>
+                                            <th>IDS/IPS Alerts</th>
+                                            <th>Log Source</th>
+                                            <th>Prediction</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for object in list_objects %}
+                                        <tr>
+                                            <td>{{ object.Fid }}</td>
+                                            <td>{{ object.Timestamp }}</td>
+                                            <td>{{ object.Source_IP_Address }}</td>
+                                            <td>{{ object.Destination_IP_Address }}</td>
+                                            <td>{{ object.Source_Port }}</td>
+                                            <td>{{ object.Destination_Port }}</td>
+                                            <td>{{ object.Protocol }}</td>
+                                            <td>{{ object.Packet_Length }}</td>
+                                            <td>{{ object.Packet_Type }}</td>
+                                            <td>{{ object.Traffic_Type }}</td>
+                                            <td>{{ object.Payload_Data }}</td>
+                                            <td>{{ object.Malware_Indicators }}</td>
+                                            <td>{{ object.Anomaly_Scores }}</td>
+                                            <td>{{ object.Alerts_Warnings }}</td>
+                                            <td>{{ object.Attack_Signature }}</td>
+                                            <td>{{ object.Action_Taken }}</td>
+                                            <td>{{ object.Severity_Level }}</td>
+                                            <td>{{ object.Device_Information }}</td>
+                                            <td>{{ object.Network_Segment }}</td>
+                                            <td>{{ object.Geo_City_location_Data }}</td>
+                                            <td>{{ object.Proxy_Information }}</td>
+                                            <td>{{ object.Firewall_Logs }}</td>
+                                            <td>{{ object.IDS_IPS_Alerts }}</td>
+                                            <td>{{ object.Log_Source }}</td>
+                                            <td>{{ object.Prediction }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="col-md-2">
+                    <!-- Empty Column (Optional) -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
